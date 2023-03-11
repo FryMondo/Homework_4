@@ -24,7 +24,7 @@ export const newZoo = {
             const foundAnimals = [];
             for (const animal of this.animals) {
                 if (animal.count === (+count)) {
-                    foundAnimals.push(animal.name);
+                    foundAnimals[foundAnimals.length] = animal.name;
                 }
             }
             return foundAnimals;
@@ -53,7 +53,10 @@ export const newZoo = {
 
     addAnimal(name, count) {
         if (typeof Number(count) === 'number' && count > 0 && typeof name === 'string' && name.trim() !== '') {
-            this.animals.push({name: name, count: count});
+            this.animals[this.animals.length] = {name: name, count: count};
+            return undefined;
+        } else {
+            return undefined;
         }
     },
 
