@@ -5,8 +5,8 @@ export const zoo = {
         if (typeof name !== "string" || name.trim() === "") {
             return 0;
         }
-        const animalExists = this.animals.some(animal => animal.name === name);
-        return animalExists ? this.animals.find(animal => animal.name === name).count : 0;
+        const animal = this.animals.find(animal => animal.name === name);
+        return animal ? animal.count : 0;
     },
 
     getTotalAnimalCount() {
@@ -22,24 +22,17 @@ export const zoo = {
     },
 
     getAnimalsSortedByCount() {
-        return this.animals.slice()
-            .sort((a, b) => a.count - b.count)
-            .map(animal => animal.name);
+        return this.animals.slice().sort((a, b) => a.count - b.count).map(animal => animal.name);
     },
 
     addAnimal(name, count) {
         if (typeof Number(count) === 'number' && count > 0 && typeof name === 'string' && name.trim() !== '') {
             this.animals.push({name, count});
-            return undefined;
-        } else {
-            return undefined;
         }
     },
 
     showAllAnimals() {
-        let result = "";
-        this.animals.forEach(animal => result += `${animal.name}: ${animal.count}\n`);
-        return result;
+        return this.animals.map(animal => `${animal.name}: ${animal.count}\n`).join("");
     },
 
     removeAnimal(name) {
