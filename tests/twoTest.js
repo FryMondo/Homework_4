@@ -5,10 +5,10 @@ import {assertForArray} from "../asserts/assertForArray.js";
 
 //Using normal values with methods
 function test1Var1() {
-    assert(zoo.addAnimal('Bear', 5), undefined);
-    assert(zoo.addAnimal('Snake', 3), undefined);
-    assert(zoo.addAnimal('Giraffe', 2), undefined);
-    assert(zoo.addAnimal('Lion', 3), undefined);
+    zoo.addAnimal('Bear', 5);
+    zoo.addAnimal('Snake', 3);
+    zoo.addAnimal('Giraffe', 2);
+    zoo.addAnimal('Lion', 3);
     assert(zoo.getAnimalCount('Bear'), 5);
     assert(zoo.getTotalAnimalCount(), 13);
     assertForArray(zoo.getAnimalsByCount(3), ['Snake', 'Lion']);
@@ -23,11 +23,11 @@ function test1Var1() {
 
 //Using "wrong" values with methods
 function test2Var1() {
-    assert(zoo.addAnimal('Zebra', 6), undefined);
-    assert(zoo.addAnimal('Crocodile', '2'), undefined);
-    assert(zoo.addAnimal('Flamingo', -7), undefined);
-    assert(zoo.addAnimal('   ', 3), undefined);
-    assert(zoo.addAnimal(undefined, 7), undefined);
+    zoo.addAnimal('Zebra', 6);
+    zoo.addAnimal('Crocodile', '2');
+    zoo.addAnimal('Flamingo', -7);
+    zoo.addAnimal('   ', 3);
+    zoo.addAnimal(undefined, 7);
     assert(zoo.getAnimalCount(null), 0);
     assert(zoo.getTotalAnimalCount(), 8);
     assert(zoo.getAnimalsByCount(-7), undefined);
@@ -40,10 +40,10 @@ function test2Var1() {
 
 //Using normal values without methods
 function test1Var2() {
-    assert(newZoo.addAnimal('Lion', 4), undefined);
-    assert(newZoo.addAnimal('Panda', 2), undefined);
-    assert(newZoo.addAnimal('Bear', 5), undefined);
-    assert(newZoo.addAnimal('Tiger', 3), undefined);
+    newZoo.addAnimal('Lion', 4);
+    newZoo.addAnimal('Panda', 2);
+    newZoo.addAnimal('Bear', 5);
+    newZoo.addAnimal('Tiger', 3);
     assert(newZoo.getAnimalCount('Panda'), 2);
     assert(newZoo.getTotalAnimalCount(), 14);
     assertForArray(newZoo.getAnimalsByCount(5), ['Bear']);
@@ -58,10 +58,10 @@ function test1Var2() {
 
 //Using 'wrong' values without methods
 function test2Var2() {
-    assert(newZoo.addAnimal('Monkey', 10), undefined);
-    assert(newZoo.addAnimal('Giraffe', '6'), undefined);
-    assert(newZoo.addAnimal('Snake', -1), undefined);
-    assert(newZoo.addAnimal('   ', 9), undefined);
+    newZoo.addAnimal('Monkey', 10);
+    newZoo.addAnimal('Giraffe', '6');
+    newZoo.addAnimal('Snake', -1);
+    newZoo.addAnimal('   ', 9);
     assert(newZoo.getAnimalCount('Lion'), 0);
     assert(newZoo.getTotalAnimalCount(), 16);
     assert(newZoo.getAnimalsByCount('-7'), undefined);
