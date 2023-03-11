@@ -3,9 +3,9 @@ export const newZoo = {
 
     getAnimalCount(name) {
         let totalCount = 0;
-        for (let i = 0; i < this.animals.length; i++) {
-            if (this.animals[i].name === name) {
-                totalCount += this.animals[i].count;
+        for (const animal of this.animals) {
+            if (animal.name === name) {
+                totalCount += animal.count;
             }
         }
         return totalCount;
@@ -13,8 +13,8 @@ export const newZoo = {
 
     getTotalAnimalCount() {
         let totalCount = 0;
-        for (let i = 0; i < this.animals.length; i++) {
-            totalCount += (+this.animals[i].count);
+        for (const animal of this.animals) {
+            totalCount += (+animal.count);
         }
         return totalCount;
     },
@@ -22,9 +22,9 @@ export const newZoo = {
     getAnimalsByCount(count) {
         if ((+count) > 0) {
             const foundAnimals = [];
-            for (let i = 0; i < this.animals.length; i++) {
-                if (this.animals[i].count === (+count)) {
-                    foundAnimals[foundAnimals.length] = this.animals[i].name;
+            for (const animal of this.animals) {
+                if (animal.count === (+count)) {
+                    foundAnimals.push(animal.name);
                 }
             }
             return foundAnimals;
@@ -34,10 +34,7 @@ export const newZoo = {
     },
 
     getAnimalsSortedByCount() {
-        const sortedAnimals = [];
-        for (let i = 0; i < this.animals.length; i++) {
-            sortedAnimals[i] = this.animals[i];
-        }
+        const sortedAnimals = [...this.animals];
         for (let i = 0; i < sortedAnimals.length; i++) {
             for (let j = 0; j < i; j++) {
                 if (sortedAnimals[i].count < sortedAnimals[j].count) {
@@ -48,25 +45,22 @@ export const newZoo = {
             }
         }
         const animalNames = [];
-        for (let i = 0; i < sortedAnimals.length; i++) {
-            animalNames[i] = sortedAnimals[i].name;
+        for (const animal of sortedAnimals) {
+            animalNames.push(animal.name);
         }
         return animalNames;
     },
 
     addAnimal(name, count) {
         if (typeof Number(count) === 'number' && count > 0 && typeof name === 'string' && name.trim() !== '') {
-            this.animals[this.animals.length] = {name: name, count: count};
-            return undefined;
-        } else {
-            return undefined;
+            this.animals.push({name: name, count: count});
         }
     },
 
     showAllAnimals() {
         let result = '';
-        for (let i = 0; i < this.animals.length; i++) {
-            result += `${this.animals[i].name}: ${this.animals[i].count}\n`
+        for (const animal of this.animals) {
+            result += `${animal.name}: ${animal.count}\n`
         }
         return result;
     },
@@ -85,8 +79,8 @@ export const newZoo = {
     },
 
     hasAnimal(name) {
-        for (let i = 0; i < this.animals.length; i++) {
-            if (this.animals[i].name === name) {
+        for (const animal of this.animals) {
+            if (animal.name === name) {
                 return true;
             }
         }
