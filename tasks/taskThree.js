@@ -1,5 +1,5 @@
 const everyOtherLetterIterator = {
-    [Symbol.iterator]: function () {
+    [Symbol.iterator]() {
         let index = 0;
         return {
             next: function () {
@@ -15,7 +15,7 @@ const everyOtherLetterIterator = {
 };
 
 const wordIterator = {
-    [Symbol.iterator]: function () {
+    [Symbol.iterator]() {
         let index = 0;
         return {
             next: function () {
@@ -23,8 +23,11 @@ const wordIterator = {
                     return {done: true};
                 }
                 let word = '';
-                while (index < taskThree.myString.length && taskThree.myString[index] !== ' ') {
-                    word += taskThree.myString[index];
+                while (index < taskThree.myString.length && taskThree.myString[index] !== ' '){
+                    if (taskThree.myString[index] !== '.' && taskThree.myString[index] !== '!' &&
+                        taskThree.myString[index] !== '?'){
+                        word += taskThree.myString[index];
+                    }
                     index++;
                 }
                 while (index < taskThree.myString.length && taskThree.myString[index] === ' ') {
@@ -37,7 +40,7 @@ const wordIterator = {
 };
 
 const sentenceIterator = {
-    [Symbol.iterator]: function () {
+    [Symbol.iterator]() {
         let index = 0;
         return {
             next: function () {
@@ -64,7 +67,7 @@ const sentenceIterator = {
 };
 
 const vowelIterator = {
-    [Symbol.iterator]: function () {
+    [Symbol.iterator]() {
         let index = 0;
         const vowels = ['a', 'e', 'i', 'o', 'u',
             'A', 'E', 'I', 'O', 'U',
