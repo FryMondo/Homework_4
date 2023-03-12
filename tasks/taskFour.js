@@ -24,11 +24,22 @@ export const mapMethods = {
         return false;
     },
     mapClear() {
-        Object.keys(this.map).forEach(key => {
-            delete this.map[key];
-        });
+        for (let key in this.map) {
+            if (this.map.hasOwnProperty(key)) {
+                delete this.map[key];
+            }
+        }
     },
     mapSize() {
         return Object.keys(this.map).length;
+    },
+    keys() {
+        return Object.keys(obj);
+    },
+    values() {
+        return Object.values(obj);
+    },
+    entries() {
+        return Object.entries(obj);
     }
 };
