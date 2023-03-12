@@ -1,6 +1,7 @@
 import {mapMethods} from "../tasks/taskFour.js";
 import {map} from "../tasks/taskFour.js";
 import {assert} from "../asserts/assert.js";
+import {assertForArray} from "../asserts/assertForArray.js";
 
 //Using normal values
 function test1() {
@@ -10,6 +11,9 @@ function test1() {
     assert(mapMethods.mapHas('mission'), map.has('mission'));
     assert(mapMethods.mapSize(), map.size);
     assert(mapMethods.mapDelete('gamemode'), map.delete('gamemode'));
+    assertForArray(mapMethods.keys(), map.keys());
+    assertForArray(mapMethods.entries(), map.entries());
+    assertForArray(mapMethods.values(), map.values());
     mapMethods.mapClear();
     map.clear();
     assert(mapMethods.mapSize(), map.size);
@@ -22,6 +26,9 @@ function test2() {
     assert(mapMethods.mapGet('question'), map.get('question'));
     assert(mapMethods.mapHas(null), map.has(undefined));
     assert(mapMethods.mapSize(), map.size);
+    assertForArray(mapMethods.keys(), map.keys());
+    assertForArray(mapMethods.entries(), map.entries());
+    assertForArray(mapMethods.values(), map.values());
     mapMethods.mapClear();
     map.clear();
     assert(mapMethods.mapDelete('name'), map.delete('gamemode'));
@@ -44,3 +51,4 @@ export function fourTest() {
     }
     console.log();
 }
+fourTest()
