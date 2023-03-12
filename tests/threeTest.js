@@ -5,7 +5,7 @@ import {assert} from "../asserts/assert.js";
 function test1() {
     taskThree.myString = 'I can`t believe! It works!';
     assert(taskThree.everySecondLetter(), '[I] [c] [n] [t] [b] [l] [e] [e] [ ] [t] [w] [r] [s] ');
-    assert(taskThree.words(), '[I] [can`t] [believe!] [It] [works!] ');
+    assert(taskThree.words(), '[I] [can`t] [believe] [It] [works] ');
     assert(taskThree.sentences(), '[I can`t believe] [ It works] ');
     assert(taskThree.vowels(), '[I] [a] [e] [i] [e] [e] [I] [o] ');
 }
@@ -15,11 +15,10 @@ function test2() {
     taskThree.myString = 'Oh gosh... I can`t believe! Are you serious?';
     assert(taskThree.everySecondLetter(), '[O] [ ] [o] [h] [.] [ ] [ ] [a] [`] [ ] [e] [i] [v] [!] [A] [e] ' +
         '[y] [u] [s] [r] [o] [s] ');
-    assert(taskThree.words(), '[Oh] [gosh...] [I] [can`t] [believe!] [Are] [you] [serious?] ');
+    assert(taskThree.words(), '[Oh] [gosh] [I] [can`t] [believe] [Are] [you] [serious] ');
     assert(taskThree.sentences(), '[Oh gosh] [] [] [ I can`t believe] [ Are you serious] ');
     assert(taskThree.vowels(), '[O] [o] [I] [a] [e] [i] [e] [e] [A] [e] [o] [u] [e] [i] [o] [u] ');
 }
-
 //Using 'wrong' values
 function test3() {
     taskThree.myString = '      ';
