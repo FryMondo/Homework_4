@@ -28,7 +28,7 @@ export const taskFive = {
         } else {
             throw new Error("Invalid course!");
         }
-        if (faculty === null || faculty === undefined || typeof faculty !== 'string') {
+        if (typeof faculty !== 'string') {
             throw new Error("Invalid faculty!");
         }
         const {email} = security;
