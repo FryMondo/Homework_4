@@ -47,5 +47,8 @@ export const zoo = {
 
     hasAnimal(name) {
         return this.animals.some(animal => animal.name === name);
+    },
+    clear() {
+        this.animals = [];
     }
 };
