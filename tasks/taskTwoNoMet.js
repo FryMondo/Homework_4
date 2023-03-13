@@ -38,9 +38,7 @@ export const newZoo = {
         for (let i = 0; i < sortedAnimals.length; i++) {
             for (let j = 0; j < i; j++) {
                 if (sortedAnimals[i].count < sortedAnimals[j].count) {
-                    const temp = sortedAnimals[i];
-                    sortedAnimals[i] = sortedAnimals[j];
-                    sortedAnimals[j] = temp;
+                    [sortedAnimals[i], sortedAnimals[j]] = [sortedAnimals[j], sortedAnimals[i]];
                 }
             }
         }
@@ -85,5 +83,8 @@ export const newZoo = {
             }
         }
         return false;
+    },
+    clear() {
+        this.animals = [];
     }
 };
