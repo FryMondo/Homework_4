@@ -61,7 +61,7 @@ function test4() {
 function test5() {
     temp = {
         Kyiv: 12,
-        Lviv: '13',
+        Lviv: 13,
         '1': 9,
         Zhytomyr: 12,
         undefined: 11
@@ -71,9 +71,8 @@ function test5() {
 
 //Using nothing
 function test6() {
-    console.log(cityTemperaturesObject)
     assertForObjects(cityTemperaturesObject, {
-        object: {'1': 9, Kyiv: 12, Lviv: '13', Zhytomyr: 12, undefined: 11}
+        object: {'1': 9, Kyiv: 12, Lviv: 13, Zhytomyr: 12, undefined: 11}
     });
 }
 
@@ -116,5 +115,3 @@ export function sixTest() {
         console.log('Something wrong in test #6');
     }
 }
-
-sixTest()
