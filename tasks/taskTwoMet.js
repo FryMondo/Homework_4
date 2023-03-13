@@ -22,7 +22,7 @@ export const zoo = {
     },
 
     getAnimalsSortedByCount() {
-        const animalCopy = [...this.animals]
+        const animalCopy = [...this.animals];
         return animalCopy.slice().sort((a, b) => a.count - b.count).map(animal => animal.name);
     },
 
