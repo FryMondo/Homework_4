@@ -51,4 +51,3 @@ export function fourTest() {
     }
     console.log();
 }
-fourTest()
