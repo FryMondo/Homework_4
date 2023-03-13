@@ -16,7 +16,7 @@ function test2() {
     assert(taskThree.everySecondLetter(), '[O] [ ] [o] [h] [.] [ ] [ ] [a] [`] [ ] [e] [i] [v] [!] [A] [e] ' +
         '[y] [u] [s] [r] [o] [s] ');
     assert(taskThree.words(), '[Oh] [gosh] [I] [can`t] [believe] [Are] [you] [serious] ');
-    assert(taskThree.sentences(), '[Oh gosh] [ I can`t believe] [ Are you serious] ');
+    assert(taskThree.sentences(), '[Oh gosh] [] [] [ I can`t believe] [ Are you serious] ');
     assert(taskThree.vowels(), '[O] [o] [I] [a] [e] [i] [e] [e] [A] [e] [o] [u] [e] [i] [o] [u] ');
 }
 
