@@ -2,7 +2,7 @@ const everyOtherLetterIterator = {
     [Symbol.iterator]() {
         let index = 0;
         return {
-            next: function () {
+            next() {
                 if (index >= taskThree.myString.length) {
                     return {done: true};
                 }
@@ -18,7 +18,7 @@ const wordIterator = {
     [Symbol.iterator]() {
         let index = 0;
         return {
-            next: function () {
+            next() {
                 if (index >= taskThree.myString.length) {
                     return {done: true};
                 }
@@ -43,16 +43,14 @@ const sentenceIterator = {
     [Symbol.iterator]() {
         let index = 0;
         return {
-            next: function () {
+            next() {
                 if (index >= taskThree.myString.length) {
                     return {done: true};
                 }
                 let startIndex = index;
-                while (index < taskThree.myString.length &&
-                taskThree.myString[index] !== "." &&
+                while (index < taskThree.myString.length && taskThree.myString[index] !== "." &&
                 (taskThree.myString[index] + taskThree[index + 1] + taskThree[index + 2]) !== "..." &&
-                taskThree.myString[index] !== "!" &&
-                taskThree.myString[index] !== "?") {
+                taskThree.myString[index] !== "!" && taskThree.myString[index] !== "?") {
                     index++;
                 }
                 let value = "";
@@ -74,7 +72,7 @@ const vowelIterator = {
             'а', 'е', 'є', 'и', 'і', 'ї', 'о', 'у', 'ю', 'я',
             'А', 'Е', 'Є', 'И', 'І', 'Ї', 'О', 'У', 'Ю', 'Я'];
         return {
-            next: function () {
+            next() {
                 while (index < taskThree.myString.length &&
                 vowels.indexOf(taskThree.myString[index]) === -1) {
                     index++;
@@ -91,8 +89,8 @@ const vowelIterator = {
 };
 
 function isBlank(str) {
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] !== ' ') {
+    for (const text of str) {
+        if (text !== ' ') {
             return false;
         }
     }
@@ -129,7 +127,9 @@ export const taskThree = {
         if (typeof taskThree.myString === 'string' && !isBlank(taskThree.myString)) {
             let result = '';
             for (const sentence of sentenceIterator) {
-                result += '[' + sentence + '] ';
+                if (sentence !== '') {
+                    result += '[' + sentence + '] ';
+                }
             }
             return result;
         } else {
