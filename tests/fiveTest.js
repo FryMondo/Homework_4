@@ -246,15 +246,15 @@ export function fiveTest() {
     }
     try {
         test2();
-        console.log('Test #2 has passed successfully');
+        console.log('Something went wrong in test #2');
     } catch (error) {
-        console.log('Something went wrong in test #2: ' + error);
+        console.log('Test #2 has passed successfully: ' + error);
     }
     try {
         test3();
-        console.log('Test #3 has passed successfully');
+        console.log('Something went wrong in test #3');
     } catch (error) {
-        console.log('Something went wrong in test #3: ' + error);
+        console.log('Test #3 has passed successfully: ' + error);
     }
     try {
         test4();
@@ -264,22 +264,21 @@ export function fiveTest() {
     }
     try {
         test5();
-        console.log('Test #5 has passed successfully');
+        console.log('Something went wrong in test #5');
     } catch (error) {
-        console.log('Something went wrong in test #5: ' + error);
+        console.log('Test #5 has passed successfully: ' + error);
     }
     try {
         test6();
-        console.log('Test #6 has passed successfully');
+        console.log('Something went wrong in test #6');
     } catch (error) {
-        console.log('Something went wrong in test #6: ' + error);
+        console.log('Test #6 has passed successfully: ' + error);
     }
     try {
         test7();
-        console.log('Test #7 has passed successfully');
+        console.log('Something went wrong in test #7');
     } catch (error) {
-        console.log('Something went wrong in test #7: ' + error);
+        console.log('Test #7 has passed successfully: ' + error);
     }
     console.log();
 }
-fiveTest()
