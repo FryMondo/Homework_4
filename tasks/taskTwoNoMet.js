@@ -54,9 +54,6 @@ export const newZoo = {
     addAnimal(name, count) {
         if (typeof Number(count) === 'number' && count > 0 && typeof name === 'string' && name.trim() !== '') {
             this.animals[this.animals.length] = {name: name, count: count};
-            return undefined;
-        } else {
-            return undefined;
         }
     },
 
