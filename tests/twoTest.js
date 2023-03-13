@@ -19,6 +19,7 @@ function test1Var1() {
         'Lion: 3\n');
     assert(zoo.removeAnimal('Lion'), true);
     assert(zoo.hasAnimal('Snake'), true);
+    zoo.clear();
 }
 
 //Using "wrong" values with methods
@@ -34,8 +35,9 @@ function test2Var1() {
     assertForArray(zoo.getAnimalsSortedByCount(), ['Crocodile', 'Zebra']);
     assert(zoo.showAllAnimals(), 'Zebra: 6\n' +
         'Crocodile: 2\n');
-    assert(zoo.removeAnimal(null), false)
-    assert(zoo.hasAnimal('Gorilla'), false)
+    assert(zoo.removeAnimal(null), false);
+    assert(zoo.hasAnimal('Gorilla'), false);
+    zoo.clear();
 }
 
 //Using normal values without methods
@@ -54,6 +56,7 @@ function test1Var2() {
         'Tiger: 3\n');
     assert(newZoo.removeAnimal('Bear'), true);
     assert(newZoo.hasAnimal('Bear'), false);
+    newZoo.clear();
 }
 
 //Using 'wrong' values without methods
@@ -70,6 +73,7 @@ function test2Var2() {
         'Giraffe: 6\n');
     assert(newZoo.removeAnimal('Panda'), false);
     assert(newZoo.hasAnimal('Snake'), false);
+    newZoo.clear();
 }
 
 export function twoTests() {    //Use only 1 normal or "wrong" test
@@ -83,20 +87,20 @@ export function twoTests() {    //Use only 1 normal or "wrong" test
     }
 
     //tests with methods and 'wrong' values
-    // try {
-    //     test2Var1();
-    //     console.log('Test #2 with methods has passed successfully');
-    // } catch (error) {
-    //     console.log('Something went wrong in test #2 with methods');
-    // }
+    try {
+        test2Var1();
+        console.log('Test #2 with methods has passed successfully');
+    } catch (error) {
+        console.log('Something went wrong in test #2 with methods');
+    }
 
     //tests without methods and normal values
-    // try {
-    //     test1Var2();
-    //     console.log('Test #1 without methods has passed successfully');
-    // } catch (error) {
-    //     console.log('Something went wrong in test #2 without methods');
-    // }
+    try {
+        test1Var2();
+        console.log('Test #1 without methods has passed successfully');
+    } catch (error) {
+        console.log('Something went wrong in test #2 without methods');
+    }
 
     //tests without methods and 'wrong' values
     try {
