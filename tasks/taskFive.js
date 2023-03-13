@@ -24,8 +24,7 @@ const studentsMap = new Map();
 export const taskFive = {
     createStudent({firstName, lastName, security, faculty, course, ...grades}) {
         const username = generateUsername(firstName, lastName);
-        if (course !== null && course !== undefined && !isNaN(+course) && course >= 1 && course <= 5) {
-        } else {
+        if (course === null || course === undefined || isNaN(+course) || (+course) < 1 || (+course) > 5) {
             throw new Error("Invalid course!");
         }
         if (typeof faculty !== 'string') {
