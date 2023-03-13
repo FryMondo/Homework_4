@@ -19,6 +19,7 @@ function test2() {
     assert(taskThree.sentences(), '[Oh gosh] [] [] [ I can`t believe] [ Are you serious] ');
     assert(taskThree.vowels(), '[O] [o] [I] [a] [e] [i] [e] [e] [A] [e] [o] [u] [e] [i] [o] [u] ');
 }
+
 //Using 'wrong' values
 function test3() {
     taskThree.myString = '      ';
