@@ -23,9 +23,9 @@ const wordIterator = {
                     return {done: true};
                 }
                 let word = '';
-                while (index < taskThree.myString.length && taskThree.myString[index] !== ' '){
+                while (index < taskThree.myString.length && taskThree.myString[index] !== ' ') {
                     if (taskThree.myString[index] !== '.' && taskThree.myString[index] !== '!' &&
-                        taskThree.myString[index] !== '?'){
+                        taskThree.myString[index] !== '?') {
                         word += taskThree.myString[index];
                     }
                     index++;
